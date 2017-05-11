@@ -5,4 +5,5 @@
 * [Git branch](git-branch.md)
 * [Git merge](git-merge.md)
 * [Git rebase](git-rebase.md)
+* [Git checkout : HEAD usage ](git-checkout-head-usage.md)
 
