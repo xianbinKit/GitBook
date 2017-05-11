@@ -1,6 +1,6 @@
 # Git checkout : HEAD    跳转当前节点到指定位置
 
-#####  跳转
+##### 跳转
 
 ```
 git checkout <branch name or node hashcode>
@@ -10,15 +10,15 @@ git checkout <branch name or node hashcode>
 
 HEAD 表示当前正在什么节点，当指向一个 `branch`时，会有\*表示， 这时候是 `HEAD->bugFix->C4`. 因为`bugFix`分支如果有没有提交的内容，则`bugFix` 分支和C4并不完全一致。
 
-#####  相对跳转
+##### 相对跳转
 
- 上面的移动命令中，C4 只是一个假设hashcode, 实际的hascode有40位那么长，我们可以通过 git log 来查看hashcode的值。也可以只输入前几位hashcode来实现跳转，只要这个hashcode唯一。
+上面的移动命令中，C4 只是一个假设hashcode, 实际的hascode有40位那么长，我们可以通过 git log 来查看hashcode的值。也可以只输入前几位hashcode来实现跳转，只要这个hashcode唯一。
 
 ```
 git log
 ```
 
- 当然还有更简便的相对移动。
+当然还有更简便的相对移动。
 
 ```
 git checkout bugFix^
@@ -29,6 +29,16 @@ git checkout bugFix^
 ```
 git checkout HEAD^
 ```
+
+##### 多步跳转 ~
+
+```
+git checkout bugFix~2
+```
+
+多次输入^是很烦的，可以直接输入负号+数字来实现直接跳转到某个地方。
+
+##### 
 
 
 
