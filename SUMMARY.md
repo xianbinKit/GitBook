@@ -11,4 +11,6 @@
 * [Tag](tag.md)
 * [Avoid debug printf](avoid-debug-printf.md)
 * [CommitSkill](commit-skill.md)
+* [Git Describe](git-describe.md)
+* [Merge Skill](merge-skill.md)
 
