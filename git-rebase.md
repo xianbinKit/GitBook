@@ -22,7 +22,11 @@ git checkout master; git rebase bugFix
 
 ![](/assets/img_rebase_3.png)
 
-##### 
+#####  有选择性的合并
 
+```
+git rebase -i <target node> 
+```
 
+ 这个命令讲当前节点合并到目标节点， 会弹出UI窗口，让你选择要合并的节点和改变顺序。
 
