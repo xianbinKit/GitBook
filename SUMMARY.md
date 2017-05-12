@@ -7,4 +7,5 @@
 * [Git rebase](git-rebase.md)
 * [Git checkout : HEAD usage ](git-checkout-head-usage.md)
 * [Reset and Revert](reset-and-revert.md)
+* [Cherry-pick](cherry-pick.md)
 
