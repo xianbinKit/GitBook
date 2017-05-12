@@ -22,7 +22,7 @@ git checkout master; git rebase bugFix
 
 ![](/assets/img_rebase_3.png)
 
-##### rebase也可以实现相同的共呢个，可以到[Git rebase查看。](/git-rebase.md)
+##### 
 
 
 
