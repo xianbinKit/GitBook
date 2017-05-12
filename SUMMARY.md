@@ -8,7 +8,7 @@
 * [Git checkout : HEAD usage ](git-checkout-head-usage.md)
 * [Reset and Revert](reset-and-revert.md)
 * [Cherry-pick](cherry-pick.md)
-* Tag
+* [Tag](tag.md)
 * [Avoid debug printf](avoid-debug-printf.md)
 * [CommitSkill](commit-skill.md)
 
