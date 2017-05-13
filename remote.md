@@ -67,11 +67,19 @@ git push
 
 git push是把本地master的修改更新到本地的origin/master\(或者说将origin/master合并到master\), 然后推送到远程仓库。和pull一样，是一系列的操作。
 
+
+
+
+
 ```
 git push <remote> <place>   // ex: git push origin master
 ```
 
- 如果使用这条命令，git会忽略你当前所在分支，而是直接检测远程仓库origin里master分支和本地master分支的不同，并进行push.
+如果使用这条命令，git会忽略你当前所在分支，而是直接检测远程仓库origin里master分支和本地master分支的不同，并进行push.
+
+```
+git 
+```
 
 假设你周一克隆了一个仓库，然后开始研发某个新功能。到周五时，你新功能开发测试完毕，可以发布了。但是 —— 天啊！你的同事这周写了一堆代码，还改了许多你的功能中使用的 API，这些变动会导致你新开发的功能变得不可用。但是他们已经将那些提交推送到远程仓库了，因此你的工作就变成了基于项目**旧版**的代码，与远程仓库最新的代码不匹配了。
 
@@ -107,8 +115,6 @@ git fetch; git merge origin/master; git push
 
 ![](/assets/img_remoate6.png)
 
-
-
 在开发社区里，有许多关于 merge 与 rebase 的讨论。以下是关于 rebase 的优缺点：
 
 优点:
@@ -122,8 +128,6 @@ git fetch; git merge origin/master; git push
 比如, 提交 C1 可以被 rebase 到 C3 之后。这看起来 C1 中的工作是在 C3 之后进行的，但实际上是在 C3 之前。
 
 一些开发人员喜欢保留提交历史，因此更偏爱 merge。而其他人（比如我自己）可能更喜欢干净的提交树，于是偏爱 rebase。仁者见仁，智者见智。 :D
-
-
 
 首先来看`git push`。在远程跟踪课程中，你已经学到了 Git 是通过当前检出分支的属性来确定远程仓库以及要 push 的目的地的。这是未指定参数时的行为，我们可以为 push 指定参数，语法是：
 
@@ -141,6 +145,16 @@ _切到本地仓库中的“master”分支，获取所有的提交，再到远�
 
 需要注意的是，因为我们通过指定参数告诉了 Git 所有它需要的信息, 所以它就忽略了我们所检出的分支的属性！
 
+
+
+要同时为源和目的地指定`<place>`的话，只需要用冒号`:`将二者连起来就可以了：
+
+`git push origin <source>:<destination>`
+
+这个参数实际的值是个 refspec，“refspec” 是一个自造的词，意思是 Git 能识别的位置（比如分支`foo`或者`HEAD~1`）
+
+一旦你指定了独立的来源和目的地，就可以组织出言简意赅的远程操作命令了，让我们看看演示！
+
 ## 指定本地远程分支的名字
 
 直接了当地讲，`master`和`o/master`的关联关系就是由分支的“remote tracking”属性决定的。`master`被设定为跟踪`o/master`—— 这意味着为`master`分支指定了推送的目的地以及拉取后合并的目标。
@@ -157,8 +171,6 @@ _切到本地仓库中的“master”分支，获取所有的提交，再到远�
 local branch "master" set to track remote branch "o/master"
 ```
 
-
-
 当然可以啦！你可以让任意分支跟踪`o/master`, 然后该分支会像`master`分支一样得到隐含的 push 目的地以及 merge 的目标。 这意味着你可以在分支`totallyNotMaster`上执行`git push`，将工作推送到远程仓库的`master`分支上。
 
 有两种方法设置这个属性，第一种就是通过远程分支检出一个新的分支，执行:
@@ -166,8 +178,6 @@ local branch "master" set to track remote branch "o/master"
 `git checkout -b totallyNotMaster o/master`
 
 就可以创建一个名为`totallyNotMaster`的分支，它跟踪远程分支`o/master`。
-
-
 
 ### 第二种方法
 
@@ -178,6 +188,4 @@ local branch "master" set to track remote branch "o/master"
 这样`foo`就会跟踪`o/master`了。如果当前就在 foo 分支上, 还可以省略 foo：
 
 `git branch -u o/master`
-
-
 
