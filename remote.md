@@ -49,11 +49,39 @@ git fetch; git merge origin/master;
 
 将会把远程修改C3加到本地的远程分支origin/master上，再使用merge命令把本地master分支合并到本地的远程origin/master分支，得到了节点C4,一个基于C2和C3的节点。
 
- 由于这个操作非常常用，所以git把它们合并成为了一个操作
+由于这个操作非常常用，所以git把它们合并成为了一个操作
 
 ```
 git pull
 ```
+
+##### Push
+
+```
+git push
+```
+
+ git push是把本地master的修改更新到本地的origin/master\(或者说将origin/master合并到master\), 然后推送到远程仓库。和pull一样，是一系列的操作。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
