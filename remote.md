@@ -67,10 +67,6 @@ git push
 
 git push是把本地master的修改更新到本地的origin/master\(或者说将origin/master合并到master\), 然后推送到远程仓库。和pull一样，是一系列的操作。
 
-
-
-
-
 ```
 git push <remote> <place>   // ex: git push origin master
 ```
@@ -78,8 +74,20 @@ git push <remote> <place>   // ex: git push origin master
 如果使用这条命令，git会忽略你当前所在分支，而是直接检测远程仓库origin里master分支和本地master分支的不同，并进行push.
 
 ```
-git 
+git push <remote> <source>:<destination>
 ```
+
+将不同的分支推送到远程仓库。例如：
+
+```
+git push origin foo^:master
+```
+
+![](/assets/img_push.png)  --&gt; ![](/assets/img_push2.png)
+
+ 如果destination不存在，git会帮创建一个新分支。
+
+
 
 假设你周一克隆了一个仓库，然后开始研发某个新功能。到周五时，你新功能开发测试完毕，可以发布了。但是 —— 天啊！你的同事这周写了一堆代码，还改了许多你的功能中使用的 API，这些变动会导致你新开发的功能变得不可用。但是他们已经将那些提交推送到远程仓库了，因此你的工作就变成了基于项目**旧版**的代码，与远程仓库最新的代码不匹配了。
 
@@ -144,8 +152,6 @@ _切到本地仓库中的“master”分支，获取所有的提交，再到远�
 我们通过“place”参数来告诉 Git 提交记录来自于 master, 要推送到远程仓库中的 master。它实际就是要同步的两个仓库的位置。
 
 需要注意的是，因为我们通过指定参数告诉了 Git 所有它需要的信息, 所以它就忽略了我们所检出的分支的属性！
-
-
 
 要同时为源和目的地指定`<place>`的话，只需要用冒号`:`将二者连起来就可以了：
 
