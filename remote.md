@@ -18,7 +18,7 @@ git checkout origin/master; git commit
 
 ** 本地的远程分支反应了本地远程分支与远程仓库最后一次通信的状态.**
 
-##### Fetch
+## Fetch
 
 ```
 git fetch
@@ -34,6 +34,21 @@ git fetch 命令将于远程仓库通信，更新所有本地远程branch的状�
 * `git rebase o/master`
 * `git merge o/master`
 * 等等
+
+##### `<place>`参数， see push
+
+如果你像如下命令这样为 git fetch 设置 &lt;place&gt; 的话：
+
+`git fetch origin foo`
+
+Git 会到远程仓库的`foo`分支上，然后获取所有本地不存在的提交，放到本地的`o/foo`上。
+
+  
+
+
+---
+
+##### 
 
 ##### Pull
 
@@ -160,8 +175,6 @@ _切到本地仓库中的“master”分支，获取所有的提交，再到远�
 一旦你指定了独立的来源和目的地，就可以组织出言简意赅的远程操作命令了，让我们看看演示！
 
 ---
-
-
 
 ## 指定本地远程分支的名字
 
